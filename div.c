@@ -17,7 +17,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*stack)->next->n);
+	if ((*stack)->next->n)
 	{
 		fprintf(stderr, "L%d: dividion by zero\n",
 				line_number);
