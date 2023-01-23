@@ -1,6 +1,6 @@
 #include "monty.h"
 
-global_t global_v = {0, NULL, NULL, NULL, NULL, NULL};
+global_t global_v = {0, NULL, NULL, NULL, NULL, NULL, NULL};
 
 /**
  * main - driver code
@@ -40,7 +40,7 @@ int  main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 
-		n = strtok(NULL, " \n\t\v\b\r\f\a"); /* get <int> argument */
+		n = strtok(NULL, " \n\t\v\b\r\f\a");
 		if (n != NULL)
 			global_v.n = n;
 
