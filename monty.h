@@ -61,4 +61,7 @@ void (*get_op(char *op))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 
+stack_t *add_dnodeint(stack_t **head, const int n);
+size_t print_dnodeint(stack_t **head, const int n);
+
 #endif /* MONTY_H */

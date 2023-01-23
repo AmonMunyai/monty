@@ -1,11 +1,9 @@
 #include "monty.h"
 
 /**
- * get_op
- * @op:
- * @stack:
- * @line_number
- * Return:
+ * get_op - returns a function, to corresponding to opcode.
+ * @op: opcode.
+ * Return: corresponding function to opcode.
  */
 
 void (*get_op(char *op))(stack_t **stack, unsigned int line_number)

@@ -1,22 +1,21 @@
 #include "monty.h"
 
-global_t global_variable;
+global_t global_variable = {0};
 
 /**
  * main - driver code
  * @argc: no. of arguments
- * @argv: list of arguments
+ * @argv: array of arguments
  * Return: always 0 (on success)
  */
 
 int  main(int argc, char *argv[])
 {
 	FILE *file;
-	size_t size = 0;
+	size_t size = 0, line_number = 1;
 	ssize_t readline;
-	stack_t *stack;
+	stack_t *stack = NULL;
 	char *buffer, *opcode, *n;
-	unsigned int line_number = 1;
 	void (*f)(stack_t **stack, unsigned int line_number);
 
 	if (argc != 2)
@@ -40,7 +39,7 @@ int  main(int argc, char *argv[])
 
 		if (f == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s",
+			fprintf(stderr, "L%ld: unknown instruction %s",
 					line_number, opcode);
 			exit(EXIT_FAILURE);
 		}
