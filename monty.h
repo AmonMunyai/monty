@@ -42,10 +42,11 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct global_s
- * @n:
+ * struct global_s - global variable.
+ * @n: element.
  *
- * Description:
+ * Description: element for stack,
+ * queues, LIFO, FIFO.
  */
 
 typedef struct global_s
