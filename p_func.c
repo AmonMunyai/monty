@@ -11,16 +11,16 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 
-	if (global_variable.n == NULL)
+	if (global_v.n == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n",
 				line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	while (global_variable.n[i] != '\0')
+	while (global_v.n[i] != '\0')
 	{
-		if (global_variable.n[i] < '0' || global_variable.n[i] > '9')
+		if (global_v.n[i] < '0' || global_v.n[i] > '9')
 		{
 			fprintf(stderr, "L%d: usage: push integer\n",
 					line_number);
@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 
-	add_dnodeint(stack, atoi(global_variable.n));
+	add_dnodeint(stack, atoi(global_v.n));
 }
 
 /**
