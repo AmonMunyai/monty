@@ -43,7 +43,7 @@ stack_t *add_dnodeint(stack_t **head, const int n)
  * Return: the number of elements in a stack_t list.
  */
 
-size_t print_dnodeint(stack_t **head, const int n)
+size_t print_dnodeint(stack_t **head, const int n __attribute__((unused)))
 {
 	size_t count = 0;
 	stack_t *temp = *head;

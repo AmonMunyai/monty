@@ -10,7 +10,6 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
-	stack_t *node;
 
 	if (global_variable.n == NULL)
 	{
@@ -41,7 +40,7 @@ void push(stack_t **stack, unsigned int line_number)
  * Return: nothing.
  */
 
-void pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *temp = *stack;
 
