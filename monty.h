@@ -44,17 +44,27 @@ typedef struct instruction_s
 /**
  * struct global_s - global variable.
  * @n: element.
+ * @file: file pointer.
+ * @buffer: current line buffer.
+ * @opcode: operation to perform.
+ * @head: pointer to stack_t doubly linked list head.
+ * @f: pointer to op funtion.
  *
- * Description: element for stack,
- * queues, LIFO, FIFO.
+ * Description: global variables for stack,
+ *	queues, LIFO, FIFO.
  */
 
 typedef struct global_s
 {
 	char *n;
+	FILE *file;
+	char *buffer;
+	char *opcode;
+	stack_t *head;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } global_t;
 
-extern global_t global_variable;
+extern global_t global_v;
 
 /* -- function's --------------------------------------------------------- */
 
