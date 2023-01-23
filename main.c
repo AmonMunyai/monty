@@ -33,7 +33,6 @@ int  main(int argc, char *argv[])
 		global_v.opcode = strtok(global_v.buffer, " \n\t\v\b\r\f\a");
 
 		global_v.f = get_op(global_v.opcode);
-		
 		if (global_v.f == NULL)
 		{
 			fprintf(stderr, "L%ld: unknown instruction %s\n",

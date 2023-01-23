@@ -15,9 +15,9 @@ void (*get_op(char *op))(stack_t **stack, unsigned int line_number)
 	};
 
 	int i = 0;
-	
+
 	while (strcmp(ops[i].opcode, op) != 0 && i < 2)
 		i++;
-	
+
 	return (ops[i].f);
 }
