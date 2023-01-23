@@ -3,6 +3,27 @@
 global_t global_variable = {0};
 
 /**
+ * read_file - opens a file.
+ * @filename: name of file to open.
+ * Return: a FILE pointer.
+ */
+
+FILE read_file(char * const filename)
+{
+	FILE *file;
+
+	file = fopen(filename, "r");
+
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		exit(EXIT_FAILURE);
+	}
+
+	return (file);
+}
+
+/**
  * main - driver code
  * @argc: no. of arguments
  * @argv: array of arguments
@@ -24,13 +45,7 @@ int  main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	file = fopen(argv[1], "r"); /* open file */
-
-	if (file == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	read_file(filename);
 
 	while ((readline = getline(&buffer, &size, file)) > 0)
 	{
